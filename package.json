@@ -1,0 +1,19 @@
+{
+  "name": "notes-by-claret",
+  "version": "1.0.0",
+  "description": "Notes app task 2 wejapa internship 2020\nWebsite:https://notes-by-claret.herokuapp.com/",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "task2",
+    "notes-app",
+    "nodejs",
+    "japa-interns",
+    "wejapa-internship"
+  ],
+  "author": "Claret Nnamocha <devclareo@gmail.com>",
+  "license": "ISC"
+}
