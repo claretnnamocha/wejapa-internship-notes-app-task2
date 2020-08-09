@@ -1,7 +1,7 @@
 const populateFiles = (data, folder) => {
   html = "";
   data.forEach((element) => {
-    html += `<li data-file="${element}" data-folder="${folder}" class="file"><span class="name">${element} </span><img  class="delete-file" src="./public/images/trash.svg" /></li>`;
+    html += `<li data-file="${element}" data-folder="${folder}" class="file"><span class="name">${element} </span><img  title="Delete file" class="delete-file" src="./public/images/trash.svg" /></li>`;
   });
   document.querySelector(".folder-name #name").innerHTML = folder;
   document.querySelectorAll(".folder").forEach((element) => {
@@ -22,7 +22,7 @@ const folderTrashListener = () => {
     element.addEventListener("click", (e) => {
       let { folder } = e.target.parentElement.dataset;
       Swal.fire({
-        title: `Delete ${folder} and its contents?`,
+        title: `Delete folder '${folder}' and its contents?`,
         text: "You will not be able to reverse this action!",
         icon: "warning",
         showCancelButton: true,
@@ -52,7 +52,7 @@ const fileTrashListener = () => {
     element.addEventListener("click", (e) => {
       let { folder, file } = e.target.parentElement.dataset;
       Swal.fire({
-        title: `Delete ${folder}/${file} ?`,
+        title: `Delete file '${folder}/${file}' ?`,
         text: "You will not be able to reverse this action!",
         icon: "warning",
         showCancelButton: true,
@@ -81,7 +81,7 @@ const fileTrashListener = () => {
 const populateFolders = (data) => {
   html = "";
   data.forEach((element) => {
-    html += `<li id="f-${element}" data-folder="${element}" class="folder"><span class="name">${element} </span><img  class="delete-folder" src="./public/images/trash.svg" /></li>`;
+    html += `<li id="f-${element}" data-folder="${element}" class="folder"><span class="name">${element} </span><img title="Delete folder" class="delete-folder" src="./public/images/trash.svg" /></li>`;
   });
   document.querySelector(".folders").innerHTML = html;
   folderListener();
