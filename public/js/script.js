@@ -124,10 +124,15 @@ const init = () => {
     let d = await r.json();
     populateFiles(d, ff);
   });
-};
-init();
 
-const save_btn = document.querySelector(".save-btn");
+  const save_btn = document.querySelector(".save-btn");
+  save_btn.addEventListener("click", save);
+  document.querySelector(".new-file").addEventListener("click", createNewFile);
+  document.querySelectorAll(".new-folder").forEach((element) => {
+    element.addEventListener("click", createNewFolder);
+  });
+};
+
 const save = () => {
   saveNewFile();
 };
@@ -146,8 +151,6 @@ const saveNewFile = () => {
     }
   );
 };
-
-save_btn.addEventListener("click", save);
 
 const createNewFolder = () => {
   Swal.fire({
@@ -224,8 +227,4 @@ const createNewFile = () => {
   });
 };
 
-document.querySelectorAll(".new-folder").forEach((element) => {
-  element.addEventListener("click", createNewFolder);
-});
-
-document.querySelector(".new-file").addEventListener("click", createNewFile);
+init();

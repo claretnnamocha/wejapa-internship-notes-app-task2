@@ -257,7 +257,7 @@ const server = http.createServer((req, res) => {
             })
           );
         }
-        
+
         exists = fs.existsSync(`./notes/${query.folder}`);
         if (!exists) {
           res.end(
